@@ -146,7 +146,6 @@ void ProtocolSendAck(void)
 int main()
 {
 	uint8_t data[8];
-	//uint8_t numberOfBytes;
 	uint8_t sizeofUSBbuf = 0;
 	uint8_t canMessage[MAX_CAN_MESSAGE_LENGTH] = {0xEF};
     uint8_t readBuff[MAX_CAN_MESSAGE_LENGTH] = {};
