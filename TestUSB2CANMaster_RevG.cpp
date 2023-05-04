@@ -170,8 +170,8 @@ int main()
 
                     ZeroMemory(canMessage, sizeof(canMessage)); // reset the CAN bufferProtocolCANPackInitialize(canMessage);
 
-                    canMessage[0] = STX;
-                    canMessage[1] = PACKET_TYPE_CAN_MESSAGE_COLLECTION;
+                    canMessage[0] = STX; // start of frame
+                    canMessage[1] = PACKET_TYPE_CAN_MESSAGE_COLLECTION; // message type always 06 since this master mode
                     canMessage[3] = (dataLength) << 4; // higher nibble is length or with msb of id
                     canMessage[3] |= ((i & 0xff00) >> 8);
                     canMessage[4] = i & 0xff; // remaining bytes of id
